@@ -31,12 +31,12 @@ nav > ul {
   width: 40vw;
 }
 li {
+  border: 3px solid transparent;
   padding: .5rem;
-  border-radius: 12px;
   cursor: pointer;
-  transition: 300ms all;
+  transition: 100ms all;
 }
 li:hover {
-  background-color: rgb(243, 243, 243);
+  border-bottom: 3px solid black;
 }
 </style>

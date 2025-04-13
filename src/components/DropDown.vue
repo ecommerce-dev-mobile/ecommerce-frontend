@@ -1,7 +1,6 @@
 <template>
   <Dropdown
     class="dropdown"
-    v-model="selectedItem"
     :options="options"
     optionLabel="label"
     placeholder="Shop"

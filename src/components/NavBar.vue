@@ -10,11 +10,11 @@ import logoURL from '@/assets/piston-shop-logo.png'
       <li class="home-button">
         <router-link><img class="logo-image" :src="logoURL" alt="" /></router-link>
       </li>
-      <li>
+      <li class="nav-item">
         <DropDownComponent class="dropdown-menu" />
       </li>
-      <li class="about-us"><router-link>About us</router-link></li>
-      <li class="contact"><router-link>Contact</router-link></li>
+      <li class="nav-item"><router-link>About us</router-link></li>
+      <li class="nav-item"><router-link>Contact</router-link></li>
     </ul>
     <div class="login-button"><p>Sign up</p></div>
   </nav>
@@ -33,7 +33,7 @@ nav > ul {
   list-style: none;
   width: 40vw;
 }
-li {
+.nav-item {
   border: 3px solid transparent;
   padding: 0.5rem;
   cursor: pointer;
@@ -48,13 +48,10 @@ a {
 .home-button {
   padding: 0;
 }
-.home-button:hover {
-  border: none;
-}
 .logo-image {
-  width: 112px;
+  width: 150px;
 }
-li:hover {
+.nav-item:hover {
   border-bottom: 3px solid black;
 }
 .login-button {

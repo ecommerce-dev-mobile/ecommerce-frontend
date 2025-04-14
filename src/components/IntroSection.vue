@@ -54,6 +54,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 50%;
+  padding-top: 4rem;
 }
 .image-container > img {
   width: 540px;

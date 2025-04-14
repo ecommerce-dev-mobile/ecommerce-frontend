@@ -1,5 +1,5 @@
 <script setup>
-import carImageURL from '@/assets/sally.png'
+import carImageURL from '@/assets/mcqueen.png'
 </script>
 
 <template>
@@ -20,8 +20,8 @@ main {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  justify-content: space-between;
-  /* padding-right: 8rem; */
+  justify-content: start;
+  gap: 6rem;
 }
 .intro-container {
   height: 80vh;
@@ -53,7 +53,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: fit-content;
   padding-top: 4rem;
 }
 .image-container > img {

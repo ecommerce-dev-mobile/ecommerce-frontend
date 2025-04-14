@@ -1,15 +1,15 @@
 <script setup>
 import DropDownComponent from './DropDown.vue'
 
-import logoURL from '@/assets/piston-shop-logo.png'
+import logoURL from '@/assets/logo-piston-shop.png'
 </script>
 
 <template>
   <nav>
+    <div class="home-button">
+      <router-link><img class="logo-image" :src="logoURL" alt="" /></router-link>
+    </div>
     <ul>
-      <li class="home-button">
-        <router-link><img class="logo-image" :src="logoURL" alt="" /></router-link>
-      </li>
       <li class="nav-item">
         <DropDownComponent class="dropdown-menu" />
       </li>
@@ -29,9 +29,9 @@ nav {
 }
 nav > ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   list-style: none;
-  width: 40vw;
+  width: ;
 }
 .nav-item {
   border: 3px solid transparent;
@@ -59,7 +59,7 @@ a {
   background-color: black;
   color: #fff;
   border-radius: 25px;
-  padding: .5rem;
+  padding: 0.5rem;
   font-weight: 500;
   cursor: pointer;
   transition: 200ms all;

@@ -34,32 +34,38 @@ nav > ul {
   width: 40vw;
 }
 .nav-item {
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   padding: 0.5rem;
   cursor: pointer;
   transition: 100ms all;
   display: flex;
   align-items: center;
+
+
 }
 a {
   text-decoration: none;
   color: black;
 }
+
 .home-button {
   padding: 0;
 }
 .logo-image {
   width: 150px;
 }
+
 .nav-item:hover {
-  border-bottom: 3px solid black;
+  border-bottom:  4px solid black;
 }
+
+
 .login-button {
   border: 1px solid #ffff;
   background-color: black;
   color: #fff;
-  border-radius: 25px;
-  padding: .5rem;
+  border-radius: 1rem;
+  padding: 10px 20px;
   font-weight: 500;
   cursor: pointer;
   transition: 200ms all;

@@ -7,16 +7,20 @@ import logoURL from '@/assets/logo-piston-shop.png'
 <template>
   <nav>
     <div class="home-button">
-      <router-link><img class="logo-image" :src="logoURL" alt="" /></router-link>
+      <router-link to="/"><img class="logo-image" :src="logoURL" alt="" /></router-link>
     </div>
     <ul>
       <li class="nav-item">
         <DropDownComponent class="dropdown-menu" />
       </li>
-      <li class="nav-item"><router-link>About us</router-link></li>
-      <li class="nav-item"><router-link>Contact</router-link></li>
+      <li class="nav-item"><router-link to="/">About us</router-link></li>
+      <li class="nav-item"><router-link to="/">Contact</router-link></li>
     </ul>
-    <div class="login-button"><p>Sign up</p></div>
+    <div class="end-bar">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <i class="fa-regular fa-heart"></i>
+      <div class="login-button"><p>Sign up</p></div>
+    </div>
   </nav>
 </template>
 
@@ -24,14 +28,18 @@ import logoURL from '@/assets/logo-piston-shop.png'
 nav {
   display: flex;
   align-items: center;
+  align-items: start;
   justify-content: space-between;
   margin: 1rem 4rem 1rem 4rem;
+  gap: 3rem;
 }
 nav > ul {
   display: flex;
   justify-content: start;
   list-style: none;
-  width: ;
+  width: 100%;
+  margin-top: 1.5rem;
+  gap: 3rem;
 }
 .nav-item {
   border: 3px solid transparent;
@@ -45,6 +53,17 @@ a {
   text-decoration: none;
   color: black;
 }
+.end-bar {
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+i {
+  font-size: 1.5rem;
+}
 .home-button {
   padding: 0;
 }
@@ -55,6 +74,11 @@ a {
   border-bottom: 3px solid black;
 }
 .login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 48px;
   border: 1px solid #ffff;
   background-color: black;
   color: #fff;
@@ -68,5 +92,8 @@ a {
   background-color: #fff;
   color: black;
   border: 1px solid black;
+}
+.login-button p {
+  width: fit-content;
 }
 </style>

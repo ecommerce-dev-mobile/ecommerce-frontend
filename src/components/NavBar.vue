@@ -13,6 +13,7 @@ import logoURL from '@/assets/logo-piston-shop.png'
       <li class="nav-item">
         <DropDownComponent class="dropdown-menu" />
       </li>
+      <li class="nav-item"><router-link to="/">Cars</router-link></li>
       <li class="nav-item"><router-link to="/">About us</router-link></li>
       <li class="nav-item"><router-link to="/">Contact</router-link></li>
     </ul>
@@ -30,7 +31,7 @@ nav {
   align-items: center;
   align-items: start;
   justify-content: space-between;
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 1rem 3rem 1rem 3rem;
   gap: 3rem;
 }
 nav > ul {

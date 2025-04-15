@@ -59,11 +59,11 @@ a {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 1.5rem;
 }
 i {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 .home-button {
   padding: 0;

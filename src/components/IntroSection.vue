@@ -19,7 +19,7 @@ import carImageURL from '@/assets/mcqueen.png'
 main {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 100%;
   justify-content: start;
   gap: 6rem;
 }

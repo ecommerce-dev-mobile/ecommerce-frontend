@@ -43,12 +43,14 @@ nav > ul {
   gap: 3rem;
 }
 .nav-item {
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   padding: 0.5rem;
   cursor: pointer;
   transition: 100ms all;
   display: flex;
   align-items: center;
+  position: relative;
+
 }
 a {
   text-decoration: none;
@@ -71,9 +73,23 @@ i {
 .logo-image {
   width: 150px;
 }
-.nav-item:hover {
-  border-bottom: 3px solid black;
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2.5px;
+  width: 0%;
+  background-color: black;
+  transition: width 0.3s ease;
 }
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+
 .login-button {
   display: flex;
   justify-content: center;
@@ -83,8 +99,8 @@ i {
   border: 1px solid #ffff;
   background-color: black;
   color: #fff;
-  border-radius: 25px;
-  padding: 0.5rem;
+  border-radius: 1rem;
+  padding: 10px 20px;
   font-weight: 500;
   cursor: pointer;
   transition: 200ms all;

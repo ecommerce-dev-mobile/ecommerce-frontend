@@ -6,11 +6,16 @@ import carImageURL from '@/assets/mcqueen.png'
   <main>
     <div class="intro-container">
       <h1 class="intro-title">Welcome to Piston Shop</h1>
-      <p class="intro-description">Warm up your engines and go explore our services.</p>
+      <div class="description-text">
+        <p class="intro-description">
+          Welcome to Piston Shop, the best Cars shopping e-commerce. Warm up your engines, prepare
+          to our trip and go explore our services.
+        </p>
+      </div>
       <button class="explore-button">Explore Now</button>
     </div>
     <div class="image-container">
-      <img :src="carImageURL" alt="">
+      <img :src="carImageURL" alt="" />
     </div>
   </main>
 </template>
@@ -32,8 +37,17 @@ main {
   padding-left: 6rem;
   gap: 1rem;
 }
+
+.intro-description {
+  width: 650px;
+  font-size: 13pt;
+  animation: slideUp 2.5s ease-out;
+}
+
 .intro-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  animation: slideUp 2s ease-out;
+
 }
 .explore-button {
   background-color: transparent;
@@ -45,6 +59,7 @@ main {
   margin-top: 1rem;
   transition: 300ms all;
 }
+
 .explore-button:hover {
   background-color: black;
   color: white;
@@ -59,4 +74,22 @@ main {
 .image-container > img {
   width: 540px;
 }
+
+
+/*ANIMAÇÃO*/
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 </style>

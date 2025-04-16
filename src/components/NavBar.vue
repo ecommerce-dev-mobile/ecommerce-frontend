@@ -89,17 +89,16 @@ i {
   width: 100%;
 }
 
-
 .login-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90px;
+  width: 110px;
   height: 48px;
   border: 1px solid #ffff;
   background-color: black;
   color: #fff;
-  border-radius: 1rem;
+  border-radius: 25rem;
   padding: 10px 20px;
   font-weight: 500;
   cursor: pointer;

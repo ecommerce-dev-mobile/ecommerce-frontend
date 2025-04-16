@@ -68,13 +68,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
+  width: 100%;
   padding-top: 4rem;
 }
 .image-container > img {
   width: 540px;
 }
-
 
 /*ANIMAÇÃO*/
 

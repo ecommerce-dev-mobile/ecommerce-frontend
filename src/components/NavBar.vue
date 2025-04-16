@@ -60,7 +60,7 @@ a {
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 4px;
+  height: 2.5px;
   width: 0%;
   background-color: black;
   transition: width 0.3s ease;

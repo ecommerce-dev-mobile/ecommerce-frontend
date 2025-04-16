@@ -17,7 +17,9 @@ import carImageURL from '@/assets/mcqueen.png'
     <div class="image-container">
       <img :src="carImageURL" alt="" />
     </div>
+    
   </main>
+
 </template>
 
 <style scoped>
@@ -55,7 +57,7 @@ main {
   padding: 10px 20px;
   font-size: 1.2rem;
   cursor: pointer;
-  border-radius: 1rem;
+  border-radius: 25rem;
   margin-top: 1rem;
   transition: 300ms all;
 }

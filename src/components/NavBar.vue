@@ -40,7 +40,7 @@ nav > ul {
   transition: 100ms all;
   display: flex;
   align-items: center;
-
+  position: relative;
 
 }
 a {
@@ -55,8 +55,19 @@ a {
   width: 150px;
 }
 
-.nav-item:hover {
-  border-bottom:  4px solid black;
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0%;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
 }
 
 

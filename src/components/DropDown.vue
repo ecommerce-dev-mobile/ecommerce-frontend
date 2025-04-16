@@ -20,18 +20,18 @@ const options = [{ name: 'Option 1', link: '/' }, { name: 'Option 2', link: '/' 
 <style scoped>
 .dropdown {
   display: flex;
-  gap: 0.5rem;
-  border-radius: 12px;
   cursor: pointer;
   transition: 300ms all;
   box-shadow: none !important;
   border: none;
   outline: none;
+  gap: .5rem;
 }
 ::v-deep(.p-dropdown-label.p-placeholder) {
   color: black !important;
 }
 ::v-deep(.p-dropdown-trigger) {
+  width: fit-content !important;
   color: black;
 }
 .option {

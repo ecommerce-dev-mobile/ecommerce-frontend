@@ -1,5 +1,5 @@
 <script setup>
-import carImageURL from '@/assets/mcqueen.png'
+import carImageURL from '@/assets/cars/mcqueen.png'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import carImageURL from '@/assets/mcqueen.png'
           to our trip and go explore our services.
         </p>
       </div>
-      <button class="explore-button">Explore Now</button>
+      <router-link to="/products" class="explore-button">Explore Now</router-link>
     </div>
     <div class="image-container">
       <img :src="carImageURL" alt="" />
@@ -50,6 +50,8 @@ main {
 
 }
 .explore-button {
+  text-decoration: none;
+  color: black;
   background-color: transparent;
   border: 1px solid black;
   padding: 10px 20px;

@@ -1,5 +1,5 @@
 <script setup>
-import carImageURL from '@/assets/cars/mcqueen.png'
+import carImageURL from '/cars/mcqueen.png'
 </script>
 
 <template>
@@ -7,8 +7,9 @@ import carImageURL from '@/assets/cars/mcqueen.png'
     <div class="intro-container">
       <h1 class="intro-title">Welcome to Piston Shop</h1>
       <div class="description-text">
+        <h2 class="mobile-description">The best Cars® shop.</h2>
         <p class="intro-description">
-          Welcome to Piston Shop, the best Cars shopping e-commerce. Warm up your engines, prepare
+          The best Cars shopping e-commerce. Warm up your engines, prepare
           to our trip and go explore our services.
         </p>
       </div>
@@ -40,14 +41,19 @@ main {
 
 .intro-description {
   width: 650px;
-  font-size: 13pt;
+  font-size: 1rem;
+  animation: slideUp 2.5s ease-out;
+}
+
+.mobile-description {
+  display: none;
+  font-weight: 500;
   animation: slideUp 2.5s ease-out;
 }
 
 .intro-title {
   font-size: 3rem;
   animation: slideUp 2s ease-out;
-
 }
 .explore-button {
   text-decoration: none;
@@ -71,7 +77,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 4rem;
+  padding: 4rem 4rem 0 0;
 }
 .image-container > img {
   width: 540px;
@@ -91,6 +97,96 @@ main {
   }
 }
 
+@media (max-width: 1440px) {
+  main {
+    gap: 2rem;
+  }
+  .intro-container {
+    padding-left: 4rem;
+  }
+  .image-container {
+    padding-right: 4rem;
+  }
+  .image-container > img {
+    width: 400px;
+  }
+}
 
+@media (max-width: 1280px) {
+  .intro-container {
+    padding-left: 3rem;
+    width: 600px;
+  }
+  .description-text {
+    width: fit-content;
+  }
+  .intro-description {
+    width: 550px;
+  }
+  .intro-title {
+    font-size: 2.5rem;
+  }
+  .image-container {
+    padding-right: 3rem;
+  }
+}
 
+@media (max-width: 1110px) {
+  .intro-container {
+    width: 500px;
+  }
+  .description-text {
+    width: 400px;
+  }
+  .intro-description {
+    width: 400px;
+    font-size: 1rem;
+  }
+  .image-container > img {
+    width: 380px;
+  }
+}
+
+@media (max-width: 960px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .intro-container {
+    width: 100dvw;
+    height: 50vh;
+    align-items: center;
+    padding: 0;
+  }
+  .description-text, .intro-description, .mobile-description {
+    width: 550px;
+    text-align: center;
+  }
+  .image-container {
+    padding: 0;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    gap: 0;
+  }
+  .intro-container {
+    height: 40dvh;
+  }
+  .intro-title {
+    display: none;
+  }
+  .intro-description {
+    display: none;
+  }
+  .mobile-description {
+    display: block;
+  }
+  .image-container > img {
+    width: 300px;
+  }
+}
 </style>

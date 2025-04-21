@@ -64,8 +64,17 @@ a {
   gap: 2rem;
   margin-top: 1.5rem;
 }
+
 i {
   font-size: 1.3rem;
+  transition: 0.2s;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+i:hover {
+  background-color: rgb(226, 223, 223);
 }
 .home-button {
   padding: 0;

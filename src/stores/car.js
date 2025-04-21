@@ -7,7 +7,7 @@ export const useCarStore = defineStore('car', () => {
       id: 1,
       name: 'Relâmpago McQueen - Edição Corrida',
       price: 129.9,
-      imageURL: 'mcqueen-race.png',
+      imageURL: '/cars/mcqueen.png',
       description:
         'Miniatura detalhada do lendário Relâmpago McQueen com pintura de corrida e rodas com suspensão.',
       category: 'Miniaturas',
@@ -18,7 +18,7 @@ export const useCarStore = defineStore('car', () => {
       id: 2,
       name: 'Mate - Caminhão Guincho',
       price: 109.9,
-      imageURL: 'mater-truck.png',
+      imageURL: '/cars/mate.png',
       description: 'O divertido e desajeitado guincho do Radiator Springs agora na sua prateleira!',
       category: 'Miniaturas',
       stock: 8,
@@ -28,7 +28,7 @@ export const useCarStore = defineStore('car', () => {
       id: 3,
       name: 'Sally Carrera - Modelo Luxo',
       price: 119.9,
-      imageURL: 'sally-carrera.png',
+      imageURL: '/cars/sally.png',
       description:
         'A elegante Porsche azul de Radiator Springs, perfeita para fãs e colecionadores.',
       category: 'Miniaturas',
@@ -39,7 +39,7 @@ export const useCarStore = defineStore('car', () => {
       id: 4,
       name: 'Doc Hudson - Hudson Hornet',
       price: 139.9,
-      imageURL: 'doc-hudson.png',
+      imageURL: '/cars/hudson.png',
       description:
         'O lendário Doc Hudson em versão clássica com pintura metálica e rodas de borracha.',
       category: 'Miniaturas',
@@ -50,7 +50,7 @@ export const useCarStore = defineStore('car', () => {
       id: 5,
       name: 'Frosty - Edição Australiana',
       price: 119.9,
-      image: 'frosty.png',
+      imageURL: '/cars/frosty.png',
       description:
         'Frosty, o campeão australiano da World Grand Prix, em miniatura colecionável com design exclusivo.',
       category: 'Miniaturas',
@@ -59,11 +59,11 @@ export const useCarStore = defineStore('car', () => {
     },
     {
       id: 6,
-      name: 'Varinha de Ranho',
+      name: 'Vara de Ranho',
       price: 114.9,
-      image: 'vara-de-ranho.png',
+      imageURL: '/cars/vara-de-ranho.png',
       description:
-        'O hilário e excêntrico carro verde, direto do Radiator Springs, agora em versão de brinquedo.',
+        'O excêntrico dodge americano, direto do Radiator Springs, agora em versão de brinquedo.',
       category: 'Miniaturas',
       stock: 11,
       featured: false,
@@ -72,7 +72,7 @@ export const useCarStore = defineStore('car', () => {
       id: 7,
       name: 'Ramone - Oficina Estilo Baixo',
       price: 124.9,
-      image: 'ramone.png',
+      imageURL: '/cars/ramone.png',
       description:
         'O estiloso Ramone com pintura roxa metálica e suspensão rebaixada. Arte automotiva pura!',
       category: 'Miniaturas',
@@ -81,9 +81,9 @@ export const useCarStore = defineStore('car', () => {
     },
     {
       id: 8,
-      name: 'Finn McMissile - Edição Espiã',
+      name: 'Phil McMissile',
       price: 139.9,
-      image: 'finn-mcmissile.png',
+      imageURL: '/cars/phil.png',
       description:
         'Agente secreto britânico com lançadores, radar e estilo à la 007. Um must-have para fãs!',
       category: 'Miniaturas',
@@ -94,7 +94,7 @@ export const useCarStore = defineStore('car', () => {
       id: 9,
       name: 'Francesco Bernoulli - GP Mundial',
       price: 129.9,
-      image: 'francesco.png',
+      imageURL: '/cars/francesco.png',
       description: 'O rival italiano de McQueen com design de Fórmula 1 e muito estilo europeu.',
       category: 'Miniaturas',
       stock: 10,
@@ -104,7 +104,7 @@ export const useCarStore = defineStore('car', () => {
       id: 10,
       name: 'Max Schnell - Corrida Alemã',
       price: 119.9,
-      image: 'max-schnell.png',
+      imageURL: '/cars/max.png',
       description:
         'Representando a Alemanha na World Grand Prix, Max Schnell vem com pintura racing detalhada.',
       category: 'Miniaturas',
@@ -115,21 +115,11 @@ export const useCarStore = defineStore('car', () => {
       id: 11,
       name: 'Ivan - Caminhão de Transporte',
       price: 109.9,
-      image: 'ivan.png',
+      imageURL: '/cars/ivan.png',
       description:
         'O caminhão russo leal que aparece em Missão Secreta. Grande, resistente e detalhado.',
       category: 'Miniaturas',
       stock: 5,
-      featured: false,
-    },
-    {
-      id: 12,
-      name: 'Ramone (Versão Verde)',
-      price: 124.9,
-      image: 'ramone-verde.png',
-      description: 'Versão alternativa de Ramone com pintura verde brilhante e detalhes premium.',
-      category: 'Miniaturas',
-      stock: 4,
       featured: false,
     },
   ])

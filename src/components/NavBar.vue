@@ -10,19 +10,13 @@ function toggleMenu() {
   isMenuActive.value = !isMenuActive.value
 }
 
-
-
-
 </script>
 
 <template>
-
+  <header>
     <nav>
     <div class="home-button">
       <router-link to="/"><img class="logo-image" :src="logoURL" alt="" /></router-link>
-    </div>
-    <div class="nav-bar">
-
     </div>
     <ul class="ul-bar">
       <li class="nav-item">
@@ -37,16 +31,40 @@ function toggleMenu() {
       <i class="fa-regular fa-heart"></i>
       <div class="login-button"><p>Sign up</p></div>
     </div>
-    <div class="hamburguer">
+
+
+    <div class="hamburguer" @click="toggleMenu">
       <i class="fa-solid fa-bars"></i>
     </div>
 
-  </nav>
 
+    <div class="sidebar" :class="{ active: isMenuActive }">
+  <div class="close-btn" @click="toggleMenu">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <ul>
+    <li><router-link to="/">Cars</router-link></li>
+    <li><router-link to="/">About us</router-link></li>
+    <li><router-link to="/">Contact</router-link></li>
+    <li><button class="login-lateral"><router-link to="/">Sign up</router-link>
+    </button></li>
+
+
+  </ul>
+</div>
+  </nav>
+  </header>
 </template>
 
 <style scoped>
 
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
 
 nav {
   display: flex;
@@ -57,6 +75,7 @@ nav {
   gap: 3rem;
 
 }
+
 nav > ul {
   display: flex;
   justify-content: start;
@@ -102,8 +121,9 @@ i:hover {
 .home-button {
   padding: 0;
 }
+
 .logo-image {
-  width: 150px;
+  width: 110px;
 }
 
 .nav-item::after {
@@ -136,16 +156,16 @@ i:hover {
   cursor: pointer;
   transition: 200ms all;
 }
+
 .login-button:hover {
   background-color: #fff;
   color: black;
   border: 1px solid black;
 }
+
 .login-button p {
   width: fit-content;
 }
-
-
 
 @media (max-width: 1150px) {
   .ul-bar{
@@ -165,5 +185,66 @@ i:hover {
   }
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  padding: 2rem;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
 
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.close-btn i {
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-btn i:hover {
+  background-color: rgb(226, 223, 223);
+}
+
+.login-lateral {
+  background-color: rgb(223, 223, 223);
+  border-radius: 25rem;
+  border: none;
+  padding: 5px;
+  width: 150px;
+  transition: 0.3s;
+}
+
+.login-lateral:hover {
+  background-color: rgb(189, 189, 189);
+
+}
 </style>

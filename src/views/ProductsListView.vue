@@ -1,6 +1,6 @@
 <script setup>
 import ProductComponent from '@/components/ProductComponent.vue'
-import { useCarStore } from '@/stores/car'
+import { useCarStore } from '@/stores/racingCar'
 
 const carStore = useCarStore()
 </script>

@@ -1,13 +1,13 @@
 <script setup>
 import ProductComponent from '@/components/ProductComponent.vue'
-import { useCarStore } from '@/stores/racingCar'
+import { useRacingCarStore } from '@/stores/racingCar'
 
-const carStore = useCarStore()
+const racingCarStore = useRacingCarStore()
 </script>
 
 <template>
   <div class="products-container">
-    <ProductComponent v-for="car in carStore.cars" :key="car.id" :product="car" />
+    <ProductComponent v-for="car in racingCarStore.racingCars" :key="car.id" :product="car" />
   </div>
 </template>
 

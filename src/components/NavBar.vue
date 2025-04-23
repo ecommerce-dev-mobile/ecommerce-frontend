@@ -1,15 +1,30 @@
 <script setup>
-import DropDownComponent from './DropDown.vue'
+import { ref } from 'vue'
 
+import DropDownComponent from './DropDown.vue'
 import logoURL from '@/assets/logo-piston-shop.png'
+
+const isMenuActive = ref(false)
+
+function toggleMenu() {
+  isMenuActive.value = !isMenuActive.value
+}
+
+
+
+
 </script>
 
 <template>
-  <nav>
+
+    <nav>
     <div class="home-button">
       <router-link to="/"><img class="logo-image" :src="logoURL" alt="" /></router-link>
     </div>
-    <ul>
+    <div class="nav-bar">
+
+    </div>
+    <ul class="ul-bar">
       <li class="nav-item">
         <DropDownComponent class="dropdown-menu" />
       </li>
@@ -22,10 +37,17 @@ import logoURL from '@/assets/logo-piston-shop.png'
       <i class="fa-regular fa-heart"></i>
       <div class="login-button"><p>Sign up</p></div>
     </div>
+    <div class="hamburguer">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
   </nav>
+
 </template>
 
 <style scoped>
+
+
 nav {
   display: flex;
   align-items: center;
@@ -33,6 +55,7 @@ nav {
   justify-content: space-between;
   margin: 1rem 3rem 1rem 3rem;
   gap: 3rem;
+
 }
 nav > ul {
   display: flex;
@@ -121,4 +144,26 @@ i:hover {
 .login-button p {
   width: fit-content;
 }
+
+
+
+@media (max-width: 1150px) {
+  .ul-bar{
+    display: none;
+  }
+
+  .end-bar {
+    display: none;
+  }
+
+}
+
+@media (min-width: 1150px) {
+  .fa-bars {
+    display: none;
+
+  }
+}
+
+
 </style>

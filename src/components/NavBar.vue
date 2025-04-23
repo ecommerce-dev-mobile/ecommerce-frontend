@@ -85,6 +85,7 @@ nav > ul {
   gap: 3rem;
 }
 .nav-item {
+
   border: 2px solid transparent;
   padding: 0.5rem;
   cursor: pointer;
@@ -92,6 +93,7 @@ nav > ul {
   display: flex;
   align-items: center;
   position: relative;
+
 
 }
 a {
@@ -123,7 +125,13 @@ i:hover {
 }
 
 .logo-image {
-  width: 110px;
+  width: 100px;
+  margin-right: 30px;
+}
+
+.fa-bars {
+  font-size: 25px;
+  margin-top: 10px;
 }
 
 .nav-item::after {
@@ -140,6 +148,8 @@ i:hover {
 .nav-item:hover::after {
   width: 100%;
 }
+
+
 
 .login-button {
   display: flex;
@@ -178,10 +188,13 @@ i:hover {
 
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1151px) {
   .fa-bars {
     display: none;
+  }
 
+  .sidebar {
+    display: none;
   }
 }
 
@@ -227,6 +240,7 @@ i:hover {
 .close-btn i {
   padding: 10px;
   border-radius: 50%;
+  font-size: 25px;
   transition: background-color 0.2s;
 }
 

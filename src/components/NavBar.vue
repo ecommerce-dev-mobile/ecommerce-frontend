@@ -6,6 +6,7 @@ import logoURL from '@/assets/logo-piston-shop.png'
 
 const isMenuActive = ref(false)
 const isLoginVisible = ref(false)
+const isContactVisible = ref(false)
 
 function toggleMenu() {
   isMenuActive.value = !isMenuActive.value
@@ -14,6 +15,7 @@ function toggleMenu() {
 function showLoginModal() {
   isLoginVisible.value = !isLoginVisible.value
 }
+
 
 </script>
 
@@ -29,7 +31,7 @@ function showLoginModal() {
       </li>
       <li class="nav-item"><router-link to="/">Cars</router-link></li>
       <li class="nav-item"><router-link to="/">About us</router-link></li>
-      <li class="nav-item"><router-link to="/">Contact</router-link></li>
+      <li class="nav-item" @click="showContactModal"><router-link to="/">Contact</router-link></li>
     </ul>
     <div class="end-bar">
       <i class="fa-solid fa-bag-shopping"></i>
@@ -61,16 +63,17 @@ function showLoginModal() {
   <div v-if="isLoginVisible" class="login-modal">
   <div class="login-content">
     <span class="close" @click="showLoginModal">&times;</span>
-    <h2>Login</h2>
+    <h2 style="margin-bottom: 30px;">LOGIN</h2>
 
     <input type="name" placeholder="Nome:">
     <input type="email" placeholder="Email">
     <input type="passworld" placeholder="Senha:">
 
 
-    <button class="btn-log">LOGAR</button>
+    <button class="btn-log" @click="showLoginModal">LOGAR</button>
   </div>
 </div>
+
 
 
 </template>
@@ -316,6 +319,17 @@ input {
   margin-bottom: 10px;
 }
 
+.mensagem {
+  background-color: rgb(216, 216, 216);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 150px;
+}
+
+
+
 .btn-log {
   background-color: black;
   color: #fff;
@@ -341,5 +355,7 @@ input {
     transform: translateY(0);
   }
 }
+
+
 
 </style>

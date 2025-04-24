@@ -5,15 +5,20 @@ import DropDownComponent from './DropDown.vue'
 import logoURL from '@/assets/logo-piston-shop.png'
 
 const isMenuActive = ref(false)
+const isLoginVisible = ref(false)
 
 function toggleMenu() {
   isMenuActive.value = !isMenuActive.value
 }
 
+function showLoginModal() {
+  isLoginVisible.value = !isLoginVisible.value
+}
+
 </script>
 
 <template>
-  <header>
+
     <nav>
     <div class="home-button">
       <router-link to="/"><img class="logo-image" :src="logoURL" alt="" /></router-link>
@@ -29,7 +34,7 @@ function toggleMenu() {
     <div class="end-bar">
       <i class="fa-solid fa-bag-shopping"></i>
       <i class="fa-regular fa-heart"></i>
-      <div class="login-button"><p>Sign up</p></div>
+      <div class="login-button" @click="showLoginModal"><p>Sign up</p></div>
     </div>
 
 
@@ -53,18 +58,25 @@ function toggleMenu() {
   </ul>
 </div>
   </nav>
-  </header>
+  <div v-if="isLoginVisible" class="login-modal">
+  <div class="login-content">
+    <span class="close" @click="showLoginModal">&times;</span>
+    <h2>Login</h2>
+
+    <input type="name" placeholder="Nome:">
+    <input type="email" placeholder="Email">
+    <input type="passworld" placeholder="Senha:">
+
+
+    <button class="btn-log">LOGAR</button>
+  </div>
+</div>
+
+
 </template>
 
 <style scoped>
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #fff;
-  z-index: 1000;
-}
 
 nav {
   display: flex;
@@ -239,7 +251,7 @@ i:hover {
 
 .close-btn i {
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 30px;
   font-size: 25px;
   transition: background-color 0.2s;
 }
@@ -261,4 +273,73 @@ i:hover {
   background-color: rgb(189, 189, 189);
 
 }
+
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 5rem;
+  border-radius: 10px;
+  min-width: 500px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.5s ease-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+input {
+  background-color: rgb(216, 216, 216);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-log {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-log:hover {
+  background-color: rgb(68, 68, 68);
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>

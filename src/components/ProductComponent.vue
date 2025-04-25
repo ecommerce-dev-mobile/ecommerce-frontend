@@ -1,4 +1,6 @@
 <script setup>
+
+
 defineProps({
   product: Object,
 })
@@ -26,6 +28,7 @@ const formatPrice = (price) => {
       </div>
     </div>
   </div>
+
 </template>
 
 <style scoped>

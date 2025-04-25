@@ -18,7 +18,7 @@ import carImageURL from '/racing-cars/mcqueen.png'
     <div class="image-container">
       <img :src="carImageURL" alt="" />
     </div>
-    
+
   </main>
 
 </template>
@@ -84,8 +84,6 @@ main {
 .image-container > img {
   width: 540px;
 }
-
-/*ANIMAÇÃO*/
 
 @keyframes slideUp {
   0% {

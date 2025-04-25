@@ -1,5 +1,5 @@
 <script setup>
-import carImageURL from '/cars/mcqueen.png'
+import carImageURL from '/racing-cars/mcqueen.png'
 </script>
 
 <template>

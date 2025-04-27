@@ -2,7 +2,7 @@
 
 <template>
   <div class="route-path">
-    <h1>Homepage / Products</h1>
+    <h1><router-link to="/">Homepage</router-link> / Products</h1>
   </div>
 </template>
 
@@ -11,8 +11,10 @@
     display: flex;
     flex-direction: row;
 }
-h1 {
+h1, a {
     font-size: 1.5rem;
     font-weight: 600;
+    color: black;
+    text-decoration: none;
 }
 </style>

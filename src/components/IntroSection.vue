@@ -10,8 +10,9 @@ const imageURL = computed(() => {
 })
 
 const toggleCarImage = () => {
-  isMcqueenImage.value = !isMcqueenImage.value
-  console.log(isMcqueenImage.value)
+  setTimeout(() => {
+    isMcqueenImage.value = !isMcqueenImage.value
+  }, 100);
 }
 </script>
 
@@ -29,12 +30,21 @@ const toggleCarImage = () => {
       <router-link to="#anchor" class="explore-button">Explore Now</router-link>
     </div>
     <div class="image-container">
-      <img :src="imageURL" alt="" @mouseover="toggleCarImage" />
+      <transition name="fade" mode="out-in">
+        <img v-if="imageURL" :src="imageURL" :key="imageURL" alt="" @mouseover="toggleCarImage" />
+      </transition>
     </div>
   </main>
 </template>
 
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0.5;
+}
 main {
   display: flex;
   flex-direction: row;
@@ -97,6 +107,8 @@ main {
   align-items: center;
   width: 100%;
   padding: 4rem 4rem 0 0;
+  overflow: hidden;
+  position: relative;
 }
 .image-container > img {
   width: 540px;

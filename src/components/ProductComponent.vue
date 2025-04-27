@@ -1,34 +1,29 @@
 <script setup>
+import { useGetDiscountedPrice } from "@/composables/useGetDiscountedPrice";
+import { useFormatPrice } from "@/composables/useFormatPrice";
 
+const { getDiscountedPrice } = useGetDiscountedPrice();
+const { formatPrice } = useFormatPrice();
 
 defineProps({
   product: Object,
 })
-
-const getDiscountedPrice = (price) => {
-  const discountedPrice = `R$ ${Math.round(price * 0.85)},49 no Pix`
-  return discountedPrice
-}
-
-const formatPrice = (price) => {
-  const newPrice = `R$ ${price.toFixed(2).replace('.', ',')}`
-  return newPrice
-}
 </script>
 
 <template>
-  <div class="product-card">
-    <img class="product-image" :src="product.imageURL" alt="" />
-    <div class="product-info">
-      <p class="product-title">{{ product.name }}</p>
-      <p class="product-category">{{ product.category }}</p>
-      <div class="price-wrapper">
-        <p class="discounted-price">{{ getDiscountedPrice(product.price) }}</p>
-        <p class="product-price">{{ formatPrice(product.price) }}</p>
+  <router-link to="/product"
+    ><div class="product-card">
+      <img class="product-image" :src="product.imageURL" alt="" />
+      <div class="product-info">
+        <p class="product-title">{{ product.name }}</p>
+        <p class="product-category">{{ product.category }}</p>
+        <div class="price-wrapper">
+          <p class="discounted-price">{{ getDiscountedPrice(product.price) }}</p>
+          <p class="product-price">{{ formatPrice(product.price) }}</p>
+        </div>
       </div>
     </div>
-  </div>
-
+  </router-link>
 </template>
 
 <style scoped>
@@ -48,7 +43,7 @@ const formatPrice = (price) => {
   transition: 300ms all;
 }
 .product-image:hover {
-    background-color: #bcbcbc;
+  background-color: #bcbcbc;
 }
 .product-info {
   display: flex;
@@ -68,6 +63,10 @@ const formatPrice = (price) => {
 .product-price {
   color: rgb(153, 153, 153);
   text-decoration: line-through;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 
 @media (max-width: 512px) {

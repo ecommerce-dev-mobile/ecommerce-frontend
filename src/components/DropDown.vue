@@ -1,3 +1,16 @@
+<script setup>
+import Dropdown from 'primevue/dropdown'
+import { useCarStore } from '@/stores/cars'
+
+const carStore = useCarStore()
+
+const options = [{ name: 'Racing cars', category: 'racing' }, { name: 'Classics', category: 'classics' }, { name: 'Support cars', category: 'support' }]
+
+const handleCategory = (category) => {
+  carStore.selectedCategory = category
+}
+</script>
+
 <template>
   <Dropdown
     class="dropdown"
@@ -6,16 +19,10 @@
     placeholder="Shop"
   >
     <template #option="slotProps">
-      <router-link :to="slotProps.option.link" class="option">{{ slotProps.option.name }}</router-link>
+      <a class="option" @click="handleCategory(slotProps.option.category)">{{ slotProps.option.name }}</a>
     </template>
   </Dropdown>
 </template>
-
-<script setup>
-import Dropdown from 'primevue/dropdown'
-
-const options = [{ name: 'Option 1', link: '/' }, { name: 'Option 2', link: '/' }, { name: 'Option 3', link: '/' }]
-</script>
 
 <style scoped>
 .dropdown {

@@ -1,5 +1,18 @@
 <script setup>
-import carImageURL from '/racing-cars/mcqueen.png'
+import { computed, ref } from 'vue'
+import mcqueenImageURL from '/racing-cars/mcqueen.png'
+import sallyImageURL from '/racing-cars/sally.png'
+
+const isMcqueenImage = ref(true)
+
+const imageURL = computed(() => {
+  return isMcqueenImage.value === true ? mcqueenImageURL : sallyImageURL
+})
+
+const toggleCarImage = () => {
+  isMcqueenImage.value = !isMcqueenImage.value
+  console.log(isMcqueenImage.value)
+}
 </script>
 
 <template>
@@ -16,7 +29,7 @@ import carImageURL from '/racing-cars/mcqueen.png'
       <router-link to="#anchor" class="explore-button">Explore Now</router-link>
     </div>
     <div class="image-container">
-      <img :src="carImageURL" alt="" />
+      <img :src="imageURL" alt="" @mouseover="toggleCarImage" />
     </div>
   </main>
 </template>

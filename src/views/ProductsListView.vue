@@ -60,6 +60,7 @@ main {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  width: 100%;
   padding-right: 1rem;
 }
 </style>

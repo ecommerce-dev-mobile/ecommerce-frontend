@@ -31,7 +31,7 @@ const toggleCarImage = () => {
     </div>
     <div class="image-container">
       <transition name="fade" mode="out-in">
-        <img v-if="imageURL" :src="imageURL" :key="imageURL" alt="" @mouseover="toggleCarImage" />
+        <img v-if="imageURL" :src="imageURL" alt="" @mouseover="toggleCarImage" />
       </transition>
     </div>
   </main>

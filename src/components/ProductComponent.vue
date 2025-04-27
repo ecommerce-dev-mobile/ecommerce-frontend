@@ -69,4 +69,11 @@ const formatPrice = (price) => {
   color: rgb(153, 153, 153);
   text-decoration: line-through;
 }
+
+@media (max-width: 512px) {
+  .product-card {
+    height: 350px;
+    width: 200px;
+  }
+}
 </style>

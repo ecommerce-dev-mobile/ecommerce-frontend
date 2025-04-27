@@ -9,8 +9,8 @@ import carImageURL from '/racing-cars/mcqueen.png'
       <div class="description-text">
         <h2 class="mobile-description">The best Cars® shop.</h2>
         <p class="intro-description">
-          The best Cars shopping e-commerce. Warm up your engines, prepare
-          to our trip and go explore our services.
+          The best Cars shopping e-commerce. Warm up your engines, prepare to our trip and go
+          explore our services.
         </p>
       </div>
       <router-link to="#anchor" class="explore-button">Explore Now</router-link>
@@ -18,9 +18,7 @@ import carImageURL from '/racing-cars/mcqueen.png'
     <div class="image-container">
       <img :src="carImageURL" alt="" />
     </div>
-
   </main>
-
 </template>
 
 <style scoped>
@@ -47,10 +45,16 @@ main {
   animation: slideUp 2.5s ease-out;
 }
 
+.description-text {
+  display: flex;
+  justify-content: center;
+}
+
 .mobile-description {
   display: none;
   font-weight: 500;
   animation: slideUp 2.5s ease-out;
+  width: fit-content;
 }
 
 .intro-title {
@@ -154,13 +158,10 @@ main {
     gap: 1rem;
   }
   .intro-container {
-    width: 100dvw;
+    width: 100%;
     height: 50vh;
     align-items: center;
     padding: 0;
-  }
-  .description-text, .intro-description, .mobile-description {
-    width: 550px;
     text-align: center;
   }
   .image-container {

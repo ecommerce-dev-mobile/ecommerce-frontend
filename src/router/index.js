@@ -16,6 +16,15 @@ const router = createRouter({
       component: ProductsListView,
     }
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top: 20,
+        behavior: 'smooth'
+      }
+    }
+  }
 })
 
 export default router

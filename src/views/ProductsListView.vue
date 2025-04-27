@@ -16,7 +16,7 @@ const filteredProducts = computed(() => {
 
 <template>
   <main>
-    <div class="page-path">
+    <div class="page-path" id="anchor">
       <PagePath />
     </div>
     <div class="products">
@@ -40,8 +40,7 @@ main {
   flex-direction: column;
 }
 .page-path {
-  margin: 0 2rem 2rem 2rem;
-  width: 100vw;
+  margin: 5rem 2rem 2rem 2rem;
 }
 .products {
   display: flex;

@@ -13,7 +13,7 @@ import carImageURL from '/racing-cars/mcqueen.png'
           to our trip and go explore our services.
         </p>
       </div>
-      <router-link to="/products" class="explore-button">Explore Now</router-link>
+      <router-link to="#anchor" class="explore-button">Explore Now</router-link>
     </div>
     <div class="image-container">
       <img :src="carImageURL" alt="" />

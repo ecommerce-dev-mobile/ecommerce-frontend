@@ -4,7 +4,11 @@ import { useCarStore } from '@/stores/cars'
 
 const carStore = useCarStore()
 
-const options = [{ name: 'Racing cars', category: 'racing' }, { name: 'Classics', category: 'classics' }, { name: 'Support cars', category: 'support' }]
+const options = [
+  { name: 'Racing cars', category: 'racing' },
+  { name: 'Classics', category: 'classics' },
+  { name: 'Support cars', category: 'support' },
+]
 
 const handleCategory = (category) => {
   carStore.selectedCategory = category
@@ -12,14 +16,11 @@ const handleCategory = (category) => {
 </script>
 
 <template>
-  <Dropdown
-    class="dropdown"
-    :options="options"
-    optionLabel="label"
-    placeholder="Shop"
-  >
+  <Dropdown class="dropdown" :options="options" optionLabel="label" placeholder="Shop">
     <template #option="slotProps">
-      <a class="option" @click="handleCategory(slotProps.option.category)">{{ slotProps.option.name }}</a>
+      <a class="option" @click="handleCategory(slotProps.option.category)"
+        ><router-link to="#anchor">{{ slotProps.option.name }}</router-link></a
+      >
     </template>
   </Dropdown>
 </template>
@@ -32,7 +33,7 @@ const handleCategory = (category) => {
   box-shadow: none !important;
   border: none;
   outline: none;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 ::v-deep(.p-dropdown-label.p-placeholder) {
   color: black !important;
@@ -46,5 +47,9 @@ const handleCategory = (category) => {
   transition: 100ms all;
   color: black;
   text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>

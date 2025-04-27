@@ -56,9 +56,10 @@ main {
 }
 .products-container {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-right: 1rem;
 }
 </style>

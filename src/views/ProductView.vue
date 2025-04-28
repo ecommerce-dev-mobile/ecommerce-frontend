@@ -26,7 +26,7 @@ const removeFromCounter = () => {
 }
 
 const product = computed(() => {
-  return carStore.cars.find(product => product.id == router.params.id)
+  return carStore.cars.find((product) => product.id == router.params.id)
 })
 </script>
 
@@ -65,7 +65,7 @@ const product = computed(() => {
           <input type="number" readonly v-model="counter" />
           <i class="fa-solid fa-plus" @click="addToCounter"></i>
         </div>
-        <div class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i> Add to bag</div>
+        <div class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i><p>Add to bag</p></div>
         <div class="favorite"><i class="fa-regular fa-heart"></i></div>
       </div>
     </div>
@@ -81,7 +81,6 @@ const product = computed(() => {
   justify-content: space-between;
   gap: 3rem;
   margin: 5rem 5rem 10rem 5rem;
-
 }
 
 .image-container {
@@ -89,10 +88,12 @@ const product = computed(() => {
   background-color: #e9e9e9;
   border-radius: 5px;
   padding: 5rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .image-container img {
-  width: 600px;
+  width: 50vw;
 }
 .infos-container {
   display: flex;
@@ -210,7 +211,8 @@ h1 {
   cursor: pointer;
   transition: all 200ms;
 }
-.add-to-cart:hover, label:hover {
+.add-to-cart:hover,
+label:hover {
   background-color: #bcbcbc;
 }
 .favorite {
@@ -231,11 +233,43 @@ h1 {
 }
 @media (max-width: 1300px) {
   .container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  gap: 3rem;
-  margin: 5rem 5rem 10rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 3rem;
+    margin: 3rem 3rem 10rem 3rem;
+  }
+}
+@media (max-width: 550px) {
+  .container {
+    margin: 1rem 1rem 10rem 1rem;
+  }
+  .image-container img {
+  width: 40vw
+}
+.infos-container h1 {
+  font-size: 1.5rem;
+}
+.quantity-selector {
+  padding: 1rem;
+  border-radius: .5rem;
+  gap: 0;
+}
+.add-to-cart {
+  padding: 1rem;
+  border-radius: .5rem;
+  width: fit-content;
+}
+}
+@media (max-width: 530px) {
+  .add-to-cart p {
+    display: none;
+  }
+  .add-to-cart {
+    padding: 1rem;
+    width: 55px;
+    height: 55px;
+  }
 }
 </style>

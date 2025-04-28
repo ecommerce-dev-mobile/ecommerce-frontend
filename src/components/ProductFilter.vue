@@ -47,19 +47,11 @@ li {
   display: flex;
   align-items: center;
   position: relative;
-}
-li::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0%;
-  background-color: black;
-  transition: width 0.4s ease;
+  transition: 0.3s;
 }
 
-li:hover::after {
-  width: 80%;
+
+li:hover {
+ color: rgb(134, 133, 133);
 }
 </style>

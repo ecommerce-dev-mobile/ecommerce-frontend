@@ -27,7 +27,7 @@ const toggleCarImage = () => {
           explore our services.
         </p>
       </div>
-      <router-link to="#anchor" class="explore-button">Explore Now</router-link>
+      <router-link to="#products-section" class="explore-button">Explore Now</router-link>
     </div>
     <div class="image-container">
       <transition name="fade" mode="out-in">

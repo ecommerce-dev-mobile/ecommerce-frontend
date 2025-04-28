@@ -93,7 +93,7 @@ const product = computed(() => {
   align-items: center;
 }
 .image-container img {
-  width: 50vw;
+  width: 600px;
 }
 .infos-container {
   display: flex;
@@ -231,7 +231,7 @@ label:hover {
 .favorite:hover {
   background-color: #bcbcbc;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -239,6 +239,9 @@ label:hover {
     justify-content: space-between;
     gap: 3rem;
     margin: 3rem 3rem 10rem 3rem;
+  }
+  .image-container img {
+    width: 50vw;
   }
 }
 @media (max-width: 550px) {

@@ -9,22 +9,21 @@
           <i class="fab fa-github"></i> GitHub
         </a>
         <a href="" target="_blank" rel="noopener noreferrer">
-  <i class="fas fa-envelope"></i>
-  Email
-</a>
+          <i class="fas fa-envelope"></i>
+          Email
+        </a>
       </div>
     </div>
   </footer>
 </template>
 
-
 <style scoped>
-
 .footer {
   background-color: #000000;
   color: #fff;
   padding: 2rem 0;
   text-align: center;
+  margin-top: 10rem;
 }
 
 .footer-content {
@@ -56,9 +55,6 @@
 }
 
 .footer-links i {
-  
   font-size: 1.6rem;
 }
-
-
 </style>

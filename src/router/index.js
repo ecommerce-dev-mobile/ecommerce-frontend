@@ -17,9 +17,10 @@ const router = createRouter({
       component: ProductsListView,
     },
     {
-      path: '/product',
+      path: `/product/:id`,
       name: 'product',
       component: ProductView,
+      props: true,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -30,7 +31,8 @@ const router = createRouter({
         behavior: 'smooth'
       }
     }
-  }
+    return { top: 0 }
+  },
 })
 
 export default router

@@ -11,8 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <router-link to="/product"
-    ><div class="product-card">
+    <div class="product-card">
       <img class="product-image" :src="product.imageURL" alt="" />
       <div class="product-info">
         <p class="product-title">{{ product.name }}</p>
@@ -23,7 +22,6 @@ defineProps({
         </div>
       </div>
     </div>
-  </router-link>
 </template>
 
 <style scoped>

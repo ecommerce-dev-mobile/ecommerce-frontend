@@ -19,7 +19,7 @@ const handleCategory = (category) => {
   <Dropdown class="dropdown" :options="options" optionLabel="label" placeholder="Shop">
     <template #option="slotProps">
       <a class="option" @click="handleCategory(slotProps.option.category)"
-        ><router-link to="#anchor">{{ slotProps.option.name }}</router-link></a
+        ><router-link to="#products-section">{{ slotProps.option.name }}</router-link></a
       >
     </template>
   </Dropdown>

@@ -50,7 +50,7 @@ function showLoginModal() {
     <i class="fa-solid fa-xmark"></i>
   </div>
   <ul>
-    <li><router-link to="/">Cars</router-link></li>
+    <li><router-link to="#products-section">Cars</router-link></li>
     <li><router-link to="/">About us</router-link></li>
     <li><router-link to="/">Contact</router-link></li>
     <li><button class="login-lateral"><router-link to="/">Sign up</router-link>
@@ -68,8 +68,6 @@ function showLoginModal() {
     <input type="name" placeholder="Nome:">
     <input type="email" placeholder="Email">
     <input type="passworld" placeholder="Senha:">
-
-
     <button class="btn-log" @click="showLoginModal">LOGAR</button>
   </div>
 </div>

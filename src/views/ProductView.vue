@@ -28,6 +28,13 @@ const removeFromCounter = () => {
 const product = computed(() => {
   return carStore.cars.find((product) => product.id == router.params.id)
 })
+
+function addToCart() {
+  alert('Adicionado à sacola.')
+}
+function addToFavorites() {
+  alert('Adicionado aos favoritos')
+}
 </script>
 
 <template>
@@ -65,8 +72,8 @@ const product = computed(() => {
           <input type="number" readonly v-model="counter" />
           <i class="fa-solid fa-plus" @click="addToCounter"></i>
         </div>
-        <div class="add-to-cart"><i class="fa-solid fa-bag-shopping"></i><p>Add to bag</p></div>
-        <div class="favorite"><i class="fa-regular fa-heart"></i></div>
+        <div class="add-to-cart" @click="addToCart()"><i class="fa-solid fa-bag-shopping"></i><p>Add to bag</p></div>
+        <div class="favorite" @click="addToFavorites()"><i class="fa-regular fa-heart"></i></div>
       </div>
     </div>
     <div class="description"></div>

@@ -1,11 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useGetDiscountedPrice } from '../composables/useGetDiscountedPrice.js'
 import { useFormatPrice } from '../composables/useFormatPrice.js'
+import { useCarStore } from '@/stores/cars.js'
+import { useRoute } from 'vue-router'
 
+defineProps({
+  product: Object,
+})
 const { getDiscountedPrice } = useGetDiscountedPrice()
 const { formatPrice } = useFormatPrice()
 
+const router = useRoute()
+const carStore = useCarStore()
 const counter = ref(0)
 
 const addToCounter = () => {
@@ -17,19 +24,23 @@ const removeFromCounter = () => {
     counter.value--
   }
 }
+
+const product = computed(() => {
+  return carStore.cars.find(product => product.id == router.params.id)
+})
 </script>
 
 <template>
-  <div class="container">
+  <div v-if="product" class="container">
     <div class="image-container">
-      <img src="../../public/racing-cars/max.png" alt="" />
+      <img :src="product.imageURL" alt="" />
     </div>
     <div class="infos-container">
-      <h1>Mcqueen - Piston winner</h1>
-      <p class="category">racing</p>
+      <h1>{{ product.name }}</h1>
+      <p class="category">{{ product.category }}</p>
       <div class="price-wrapper">
-        <p class="discounted-price">{{ getDiscountedPrice(199) }}</p>
-        <p class="product-price">{{ formatPrice(199) }}</p>
+        <p class="discounted-price">{{ getDiscountedPrice(product.price) }}</p>
+        <p class="product-price">{{ formatPrice(product.price) }}</p>
       </div>
       <div class="size-selector">
         <p>Size</p>
@@ -60,6 +71,7 @@ const removeFromCounter = () => {
     </div>
     <div class="description"></div>
   </div>
+  <div v-else>Produto não encontrado</div>
 </template>
 
 <style scoped>
@@ -197,6 +209,22 @@ h1 {
   transition: all 200ms;
 }
 .add-to-cart:hover, label:hover {
+  background-color: #bcbcbc;
+}
+.favorite {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.favorite i {
+  font-size: 1.5rem;
+}
+.favorite:hover {
   background-color: #bcbcbc;
 }
 </style>
